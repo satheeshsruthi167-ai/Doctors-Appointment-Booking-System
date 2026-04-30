@@ -1,0 +1,61 @@
+body {
+    background-color:white;
+}
+
+
+.card.shadow {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 12px;
+}
+
+.card.shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+
+.btn-outline-primary, .btn-outline-info {
+    border-width: 2px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: blue;
+    color: white;
+}
+
+.btn-outline-info:hover {
+    background-color: rgb(60, 185, 207);
+    color: white;
+}
+
+
+.rounded-circle {
+    border: 3px solid rgb(213, 213, 233);
+    padding: 5px;
+    background-color: white;
+}
+
+
+.fa-3x {
+    opacity: 0.8;
+}
+
+
+.alert {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.btn-outline-success {
+    border-width: 2px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-success:hover {
+    background-color: rgb(37, 156, 37);
+    color: white;
+}

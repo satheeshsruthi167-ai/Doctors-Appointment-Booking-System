@@ -1,0 +1,56 @@
+body {
+    overflow-x: hidden;
+}
+
+.left-banner {
+    background-image: linear-gradient(135deg, rgb(23, 115, 207), rgb(29, 158, 201), rgb(70, 185, 131));
+    min-height: 100vh;
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 500px;
+}
+
+.custom-input {
+    height: 55px;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.gradient-btn {
+    background-image: linear-gradient(135deg, rgb(23, 115, 207), rgb(29, 158, 201), rgb(70, 185, 131));
+    border: none;
+    height: 60px;
+    font-size: 22px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.gradient-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+
+.alert-custom {
+    background-color: #fff5f5;
+    color: #e53e3e;
+    border: none;
+    border-left: 4px solid #e53e3e;
+    border-radius: 8px;
+    font-size: 14px;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+    
+
+@media (max-width: 991px) {
+    .left-banner {
+        min-height: 20vh; 
+    }
+    
+    h2.display-4 {
+        font-size: 2.5rem; 
+    }
+}

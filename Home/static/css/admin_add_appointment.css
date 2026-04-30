@@ -1,0 +1,104 @@
+.appointment-container {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.appointment-wrapper {
+    width: 100%;
+    max-width: 800px;
+}
+
+
+.appointment-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-header {
+    background: linear-gradient(135deg, #1773cf, #1d9ec9);
+    color: white;
+    padding: 1.5rem;
+}
+
+.appointment-header h4 {
+    margin: 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 600;
+}
+
+.appointment-body {
+    padding: 2rem;
+    background-color: white;
+}
+
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: rgb(39, 39, 39);
+    font-family: "Inter", sans-serif;
+}
+
+
+.appointment-body select,
+.appointment-body input[type="text"],
+.appointment-body input[type="date"],
+.appointment-body input[type="time"],
+.appointment-body textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    height: auto;
+    border: 1px solid  grey;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: white;
+    transition: border-color 0.3s ease;
+}
+
+.appointment-body select:focus,
+.appointment-body input:focus {
+    outline: none;
+    border-color: rgb(150, 150, 245);
+    background-color:white;
+}
+
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid white;
+}
+
+.btn-save {
+    background-color: green;
+    color: white;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-save:hover {
+    background-color: green;
+}
+
+.btn-back {
+    color: grey;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-back:hover {
+    text-decoration: underline;
+}

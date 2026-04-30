@@ -1,0 +1,45 @@
+{% extends 'doctor_dashboard_navbar.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/prescription.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container prescription-container">
+    <div class="prescription-card">
+        <header class="prescription-header">
+            <h4><i class="fas fa-file-medical"></i> New Prescription</h4>
+        </header>
+
+        <div class="card-body">
+            <div class="patient-info-box">
+                <strong>Patient:</strong> {{ appointment.patient.user.get_full_name }} <br>
+                <strong>Symptoms:</strong> {{ appointment.reason }}
+            </div>
+            
+            <form method="POST" class="prescription-form">
+                {% csrf_token %}
+                
+                {% for field in form %}
+                    <div class="form-group-custom">
+                        <label>{{ field.label }}</label>
+                        {{ field }}
+                        {% if field.errors %}
+                            <div class="error-text">{{ field.errors }}</div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+
+                <button type="submit" class="btn-save-prescription">
+                    <i class="fas fa-save"></i> Save Prescription
+                </button>
+
+                <a href="/doctorviewappointment/" class="btn-back-custom">
+            <i class="fas fa-arrow-left"></i> Go Back
+        </a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

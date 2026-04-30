@@ -1,0 +1,111 @@
+{% extends 'doctor_dashboard_navbar.html' %}
+{% load static %}
+
+{% block title %}
+Doctor dashboard
+{% endblock %}
+    
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/doctor_dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+    
+<div class="container-fluid px-4 mt-4">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h2 class="h3 mb-0 text-gray-800  text-uppercase mb-1">Doctor Dashboard</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card bg-primary text-white shadow border-0">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1" style="opacity: 0.8;">Total Patients</div>
+                            <div class="h2 mb-0 font-weight-bold">{{ total_p }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar-check fa-3x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card bg-warning text-dark shadow border-0">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1" style="opacity: 0.7;">Pending Approvals</div>
+                            <div class="h2 mb-0 font-weight-bold">{{ pending }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-clock fa-3x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card bg-success text-white shadow border-0">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1" style="opacity: 0.8;">Today's Appointments</div>
+                            <div class="h2 mb-0 font-weight-bold">{{ today }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-history fa-3x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card shadow mb-4">
+            <div class="card-body text-center">
+                <div class="mb-4">
+                    {% if doctor.img %}
+                        <img src="{{ doctor.img.url }}" class="rounded-circle border" alt="Profile" width="120" height="120" style="object-fit: cover;">
+                    {% else %}
+                        <img src="{% static 'images/doctor.png' %}" class="rounded-circle" alt="Default Profile" width="120">
+                    {% endif %}
+                </div>
+                <h4 class="font-weight-bold">Dr. {{ request.user.get_full_name }}</h4>
+                <p class="badge badge-success px-3 py-2">ON DUTY</p>
+                
+                <div class="text-left mt-3">
+                    <p class="text-muted small mb-1"><strong>Staff ID:</strong> #D{{ request.user.id }}00</p>
+                    <p class="text-muted small mb-1"><strong>Email:</strong> {{ request.user.email }}</p>
+                    <p class="text-muted small"><strong>Department:</strong> {{doctor.specialization }}</p>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-8">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Monthly Performance Metrics</h6>
+            </div>
+            <div class="card-body">
+                <h4 class="small font-weight-bold">Clinical Completion Rate <span class="float-right">80%</span></h4>
+                <div class="progress mb-4" style="height: 25px;">
+                    <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 80%">
+                        80% Efficiency
+                    </div>
+                </div>
+                <p class="text-muted small">This metric tracks your successfully completed appointments against the total assigned for the current month.</p>
+            </div>
+        </div>
+</div>
+
+{% endblock %}

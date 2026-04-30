@@ -1,0 +1,37 @@
+.text-nowrap {
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .table {
+        font-size: 14px;
+    }
+    
+    .btn-sm {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    .badge {
+        font-size: 0.7rem;
+    }
+
+
+    .table td:nth-child(3) {
+        min-width: 150px;
+        max-width: 250px;
+        white-space: normal; 
+    }
+}
+
+
+.table thead th {
+    border-top: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+}
+
+.card {
+    border-radius: 15px;
+}

@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block style%}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+{% endblock %}
+
+{% block content %}
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100%" src="https://helptravelindia.com/wp-content/uploads/2024/07/Medicare-Multispeciality-Hospital-Maharashtra.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQftP2w4OLk45xUx3XBwAtiOS0GHaNVQRcnzQ&s" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnvisnxi0JiKPZUT15TCIc8jiNJCH_jqLtpA&s" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="container">
+    <div class="text-center">
+    <h4 class="text-sm font-medium text-primary">Why Choose Us</h4>
+    <h2 class="text-heading font-bold">Everything You Need for Better Health</h2>
+    <p class="text-muted">We provide the best healthcare services with a team of experienced professionals.</p>
+    </div>
+</div>
+
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="icon">
+                        <i class="material-symbols-outlined">event_available</i>
+                    </div>
+                    <h3 class="card-title">Online Booking</h3>
+                    <p class="card-text">Schedule Appointments with your preferred doctor anytime, anywhere.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="icon">
+                        <i class="material-symbols-outlined">sticky_note_2</i>
+                    </div>
+                    <h3 class="card-title">Digital Records</h3>
+                    <p class="card-text">Access your medical history,prescriptions, and reports securely online.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="icon">
+                        <i class="material-symbols-outlined">group</i>
+                    </div>
+                    <h3 class="card-title">Expert Doctors</h3>
+                    <p class="card-text">Our team of expert doctors is dedicated to providing the best care for our patients.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="icon">
+                        <i class="material-symbols-outlined">vital_signs</i>
+                    </div>
+                    <h3 class="card-title">Health Tracking</h3>
+                    <p class="card-text">Monitor your vitals,medications, and health progress in real time.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="icon">
+                        <i class="material-symbols-outlined">shield</i>
+                    </div>
+                    <h3 class="card-title">Secure & Private</h3>
+                    <p class="card-text">Your health data is encrypted and protected with enterprise security.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="icon">
+                        <i class="material-symbols-outlined">schedule</i>
+                    </div>
+                    <h3 class="card-title">24/7 Emergency</h3>
+                    <p class="card-text">Round-the-clock emergency services with instant doctor connectivity.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="container">
+    <div class="text-center">
+    <h4 class="text-sm font-medium text-primary">Our Departments</h4>
+    <h2 class="text-heading font-bold">Specialized care for Every Need</h2>
+    <p class="text-muted">Browse our world-class departments staffed by leading medical professionals.</p>
+    </div>
+</div>
+<div class="sub">
+  <div class="card-deck" style="padding: 10px;">
+    <div class="card" style="width: 18rem; height:14rem; border-radius: 20px;">
+      <div class="icons">
+      <i class="material-symbols-outlined">cardiology</i>
+      </div>
+      <div class="card-body">
+        <p class="card-text1">Cardiology</p>
+      </div>
+    </div>
+</div>
+<div class="card-deck" style="padding: 10px;">
+  <div class="card" style="width: 18rem; height:14rem; border-radius: 20px;">
+    <div class="icons">
+    <i class="material-symbols-outlined">neurology</i>
+    </div>
+    <div class="card-body">
+      <p class="card-text1">Neurology</p>
+    </div>
+  </div>
+</div>
+<div class="card-deck" style="padding: 10px;">
+  <div class="card" style="width: 18rem; height:14rem; border-radius: 20px;">
+    <div class="icons">
+    <i class="material-symbols-outlined">child_care</i>
+    </div>
+    <div class="card-body">
+      <p class="card-text1">Pediatrics</p>
+    </div>
+  </div>
+</div>
+<div class="card-deck" style="padding: 10px;">
+  <div class="card" style="width: 18rem; height:14rem; border-radius: 20px;">
+    <div class="icons">
+    <i class="material-symbols-outlined">pet_supplies</i>
+    </div>
+    <div class="card-body">
+      <p class="card-text1">Orthopedics</p>
+    </div>
+  </div>
+</div>
+<div class="card-deck" style="padding: 10px;">
+  <div class="card" style="width: 18rem; height:14rem; border-radius: 20px;">
+    <div class="icons">
+    <i class="material-symbols-outlined">visibility</i>
+    </div>
+    <div class="card-body">
+      <p class="card-text1">Opthalmology</p>
+    </div>
+  </div>
+</div>
+<div class="card-deck" style="padding: 10px;">
+  <div class="card" style="width: 18rem; height:14rem; border-radius: 20px;">
+    <div class="icons">
+    <i class="material-symbols-outlined">stethoscope</i>
+    </div>
+    <div class="card-body">
+      <p class="card-text1">General Medicine</p>
+    </div>
+  </div>
+</div>
+ <footer>
+    <div class="container">
+        <p>© 2026 MediCare. All rights reserved.</p>
+    </div>
+ </footer>
+
+{% endblock%}

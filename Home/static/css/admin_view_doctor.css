@@ -1,0 +1,77 @@
+body { background-color: #f8f9fa; }
+
+.sub {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 20px auto;
+}
+
+
+.table {
+    font-size: 16px; 
+}
+
+h2 { 
+    font-weight: 600; 
+    color: #343a40;
+    margin-bottom: 30px; 
+}
+
+
+.dt-button {
+    background: #ffffff !important;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 4px !important;
+    padding: 6px 12px !important;
+    font-weight: 500 !important;
+    font-size: 14px !important; 
+    transition: all 0.2s;
+}
+
+.dt-button:hover {
+    background: #e9ecef !important;
+}
+
+.dt-button {
+    background: rgb(91, 187, 250) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 5px !important;
+    padding: 5px 15px !important;
+    font-size: 14px !important;
+    margin-right: 5px !important;
+}
+
+.dt-button:hover {
+    background: rgb(44, 241, 248) !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.badge-success {
+    background-color: rgb(33, 153, 33);
+    border-radius: 50px;
+}
+
+.badge-warning {
+    background-color: rgb(245, 175, 45);
+    color: #212529;
+    border-radius: 50px;
+}
+
+
+@media (max-width: 768px) {
+    .sub {
+        margin: 10px;
+        padding: 10px;
+    }
+    .table {
+        font-size: 14px;
+    }
+    .dt-buttons {
+        margin-bottom: 15px;
+        text-align: center;
+        display: block;
+    }
+}

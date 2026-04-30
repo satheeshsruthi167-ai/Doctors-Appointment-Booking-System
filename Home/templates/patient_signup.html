@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Register Patient
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/patient_signup.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <!-- <div class="col-md-6"> -->
+            <div class="card shadow">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0" style="font-weight: 500px; font-size:25px;">PATIENT REGISTRATION</h4>
+                </div>
+                <div class="card-body" style="background-color: rgb(235, 167, 119);">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <h6 class="text-muted  pb-2" style="font-weight: 500px; font-size:25px;text-align:center;">ACCOUNT INFO</h6>
+                        <hr style="border-color: black;border: width 5px;">
+                        {{ user_form.as_p }}
+                        
+                        <h6 class="text-muted pb-2 mt-4" style="font-weight: 500px; font-size:25px;text-align:center;">PERSONAL DETAILS</h6>
+                        <hr style="border-color: black;border: width 5px;">
+                        {{ profile_form.as_p }}
+
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-success btn-lg ">Create Account</button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-3">
+                        <a href="/index/" class="link" style="font-size: 22px;font-weight:500; color:darkgreen">Go Back </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

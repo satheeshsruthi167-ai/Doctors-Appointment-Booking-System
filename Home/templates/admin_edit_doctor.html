@@ -1,0 +1,39 @@
+{% extends 'admin_dashboard_navbar.html' %}
+{% load static %}
+
+{% block title %}
+Update Doctor(admin)
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/admin_adddoctor.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div  class="container custom-container" style="margin-top: 50px; "> 
+
+<h2 class="text">UPDATE DOCTOR DETAILS</h2>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <hr>
+    <h4 class="heading">ACCOUNT INFORMATION</h4>
+    {{ user_form.as_p }}
+    
+    <hr>
+    <div class="alert alert-warning">
+        Need to reset this doctor's password? 
+        <a href="/admin/auth/user/{{ user_form.instance.id }}/password/" class="btn btn-sm btn-warning">
+            Reset Password
+        </a>
+    </div>
+    <hr>
+    
+    <h4 class="heading">PROFESSIONAL INFORMATION</h4>
+    {{ profile_form.as_p }}
+    
+    <button type="submit" class="btn ">Update Doctor Account</button>
+</form>
+<a href="/adminviewdoctor/">Back to Dashboard</a>
+
+{% endblock %}

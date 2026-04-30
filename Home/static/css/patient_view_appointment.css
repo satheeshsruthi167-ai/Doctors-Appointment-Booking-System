@@ -1,0 +1,70 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+h2 {
+    font-size: 1.75rem;
+    letter-spacing: -0.5px;
+}
+
+
+.card {
+    border-radius: 15px;
+    overflow: hidden; 
+    border: none;
+    background-color: white;
+}
+
+.table thead.bg-light th {
+    background-color: white;
+    border-bottom: 2px solid ;
+    color: #495057;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+.table-hover tbody tr:hover {
+    background-color: rgba(52, 152, 219, 0.05);
+    transition: background-color 0.2s ease-in-out;
+}
+
+
+.font-weight-bold {
+    color: #2c3e50;
+}
+
+.text-muted {
+    font-size: 0.9rem;
+}
+
+.badge {
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.3px;
+}
+
+.badge-warning {
+    background-color: #ffeaa7;
+    color: #d35400 !important;
+}
+
+.badge-success {
+    background-color: #d1f2eb;
+    color: #16a085;
+}
+
+.badge-secondary {
+    background-color: #e9ecef;
+    color: #6c757d;
+}
+
+@media (max-width: 768px) {
+    .table-responsive {
+        border: 0;
+    }
+}

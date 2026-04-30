@@ -1,0 +1,68 @@
+{% extends 'admin_dashboard_navbar.html' %}
+{% load static %}
+
+
+{% block style%}
+    <link rel="stylesheet" href="{% static 'css/admin_add_appointment.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="appointment-container">
+    <div class="appointment-wrapper">
+        <div class="appointment-card">
+            <div class="appointment-header">
+                <h4><i class="fas fa-calendar-plus"></i> Manual Appointment Entry</h4>
+            </div>
+            
+            <div class="appointment-body">
+                {% if form.errors %}
+                    <div class="alert alert-danger">
+                        <strong>Error:</strong> This doctor is already booked for this specific date and time.
+                    </div>
+                {% endif %}
+                <form method="POST">
+                    {% csrf_token %}                 
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <label>Select Patient</label>
+                            {{ form.patient }}
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Select Doctor</label>
+                            {{ form.doctor }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <label>Date</label>
+                            {{ form.date }}
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Time</label>
+                            {{ form.time }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Reason for Visit</label>
+                        {{ form.reason }}
+                    </div>
+
+                    <div class="form-group">
+                        <label>Current Status</label>
+                        {{ form.status }}
+                    </div>
+
+                    <div class="button-group">
+                        <a href="/adminviewappointment/" class="btn-back">Back to List</a>
+                        <button type="submit" class="btn-save">Save Appointment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

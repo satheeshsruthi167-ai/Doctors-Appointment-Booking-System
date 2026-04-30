@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Register Doctor
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/doctor_signup.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div  class="container custom-container" style="margin-top: 50px; "> 
+
+<h2 class="text">REGISTER DOCTOR</h2>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <hr>
+    <h4 class="heading">ACCOUNT INFORMATION</h4>
+    {{ user_form.as_p }}
+    
+    <hr>
+    
+    <h4 class="heading">PROFESSIONAL INFORMATION</h4>
+    {{ profile_form.as_p }}
+    
+    <button type="submit" class="button ">Create Account</button>
+</form>
+<a href="/index/" class="link">Go Back</a>
+
+{% endblock %}

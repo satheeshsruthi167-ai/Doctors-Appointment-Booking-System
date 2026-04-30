@@ -1,0 +1,43 @@
+.navbar-brand{
+    font-size: 30px;
+    font-weight: 300px;
+}
+
+img{
+    border-radius: 30%;
+    padding-right: 10px;
+}
+
+.nav-link{
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.nav-link:hover{
+   color:white !important;
+   background-color: black;
+   border-radius: 10px;
+}
+
+.navbar-brand:hover{
+    color: rgb(93, 236, 189)  !important;
+    font-weight: bold;
+}
+
+.btn {
+    background-color: rgba(23, 115, 207, 0.9);
+    background-image: linear-gradient(135deg, rgb(23, 115, 207), rgb(29, 158, 201), rgb(70, 185, 131));
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-sizing: content-box;
+    cursor:pointer;
+    margin-left: 20px;
+}
+
+.d-block{
+    height: 600px;
+    border-radius: 0px;
+    width: 100%
+}

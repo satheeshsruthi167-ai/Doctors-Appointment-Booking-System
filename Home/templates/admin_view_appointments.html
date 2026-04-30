@@ -1,0 +1,103 @@
+{% extends 'admin_dashboard_navbar.html' %}
+{% load static %}
+
+{% block title %}
+View Patient(admin)
+{% endblock %}
+
+{% block style %}
+
+    <link rel="stylesheet" href="{% static 'css/admin_view_doctor.css' %}">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.dataTables.min.css">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div  class="sub" style="margin:20px;margin-top: 80px; "> 
+<h2 class="text-center">VIEW APPOINTMENTS</h2>
+<br><br>
+<table id="example" class="table table-hover display responsive nowrap" style="width:100%">
+    <thead>
+       <tr>
+            <th>Patient</th>
+            <th>Doctor</th>
+            <th>Date & Time</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in a %}
+        <tr>
+            <td><strong>{{ i.patient.user.first_name }}  {{ i.patient.user.last_name }}</strong></td>
+            <td>Dr. {{ i.doctor.user.first_name }} {{ i.doctor.user.last_name }}</td>
+            <td>{{ i.date }} at {{ i.time }}</td>
+            <td>
+                {% if i.status == 'PENDING' %}
+                    <span class="badge badge-warning">Pending</span>
+                {% elif i.status == 'CONFIRMED' %}
+                    <span class="badge badge-success">Confirmed</span>
+                {% else %}
+                    <span class="badge badge-secondary">Completed</span>
+                {% endif %}
+            </td>
+            <td>
+                {% if i.status == 'PENDING' %}
+                    <a href="{% url 'approve_appointment' i.id %}" class="btn btn-sm btn-success">Approve</a>
+            
+                {% elif i.status == 'CONFIRMED' %}
+                    <a href="{% url 'complete_appointment' i.id %}" class="btn btn-sm btn-info">Complete</a>
+                {% endif %}
+
+                <a href="{% url 'admin_edit_appointment' i.id %}" class="btn btn-sm btn-warning">Update</a>
+                <a href="{% url 'admin_delete_appointment' i.id %}" class="btn btn-sm btn-danger" onclick="return confirm('Delete?')">Delete</a>
+            </td>                  
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+
+<script>
+   $(document).ready(function() {
+    $('#example').DataTable({
+        responsive: true, // This enables the "plus" sign on mobile
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                className: 'dt-button'
+            },
+            {
+                extend: 'excel',
+                className: 'dt-button'
+            },
+            {
+                extend: 'pdf',
+                className: 'dt-button'
+            }
+        ],
+        language: {
+            searchPlaceholder: "Search records...",
+            search: "",
+        }
+    });
+});
+</script>
+{% endblock %}

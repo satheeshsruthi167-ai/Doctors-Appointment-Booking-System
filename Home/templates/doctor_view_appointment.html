@@ -1,0 +1,81 @@
+{% extends 'doctor_dashboard_navbar.html' %}
+{% load static %}
+
+{% block title %}
+View Appointment(doctor)
+{% endblock %}
+
+{% block style%}
+    <link rel="stylesheet" href="{% static 'css/doctor_view_appointment.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="container mt-5">
+    <h3 class="mb-4 text-primary"><i class="fas fa-list-alt"></i> Appointment Requests</h3>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success alert-dismissible fade show">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="card shadow border-0">
+        <div class="card-body p-2 p-md-4"> <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Patient</th>
+                            <th>Date</th>
+                            <th>Symptoms</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for a in appointments %}
+                        <tr>
+                            <td class="text-nowrap"><strong>{{ a.patient.user.get_full_name }}</strong></td>
+                            <td class="text-nowrap">{{ a.date }}</td>
+                            <td>{{ a.reason }}</td>
+                            <td>
+                                    {% if a.status == 'PENDING' %}
+                                        <span class="badge badge-warning">Pending</span>
+                                    {% elif a.status == 'COMPLETED' %}
+                                        <span class="badge badge-info">Completed</span>
+                                        <span class="text-muted small d-block">Treatment Finished</span>
+                                    {% else %}
+                                        <span class="badge badge-success">Confirmed</span>
+                                        <a href="{% url 'doctor_add_prescription' a.id %}" class="btn btn-sm btn-outline-primary mt-1">
+                                            <i class="fas fa-prescription"></i> Add Prescription
+                                        </a>
+                                    {% endif %}
+                                </td>
+                            <td>
+                                {% if a.status == 'PENDING' %}
+                                    <a href="{% url 'approve_appointment' a.id %}" class="btn btn-sm btn-success">
+                                        <i class="fas fa-check"></i> Approve
+                                    </a>
+                                {% elif a.status == 'CONFIRMED' %}
+                                    <a href="{% url 'complete_appointment' a.id %}" class="btn btn-sm btn-info">
+                                        <i class="fas fa-flag-checkered"></i> Mark Completed
+                                    </a>
+                                {% else %}
+                                    <button class="btn btn-sm btn-secondary" disabled>Closed</button>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5" class="text-center text-muted py-4">No appointment requests found.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div> </div>
+    </div>
+</div>
+{% endblock %}

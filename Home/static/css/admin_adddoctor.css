@@ -1,0 +1,55 @@
+.custom-container {
+    border: 5px solid rgb(216, 214, 214);
+    border-radius: 15px;       
+    padding: 30px;
+    background-color:rgb(107, 158, 182);
+    transition: all 0.3s ease; 
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.custom-container:hover {
+    border-color: rgb(0, 0, 255);     
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+    transform: translateY(-5px); 
+}
+
+.text{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration:underline;
+}
+.heading{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+hr{
+    border-color: black;
+    border-width: 5px;
+}
+
+.btn {
+background-color:rgb(8, 247, 60) ;
+height: 50px;
+margin-left: 400px;
+font-size: 22px;
+font-weight: bold;
+border-radius: 10px;
+}
+
+.btn:hover{
+    border-color: rgb(165, 42, 42);     
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+    transform: translateY(-5px); 
+}
+
+a{
+    font-size: 25px;
+    color: black;
+    font-weight: 600;
+}
+

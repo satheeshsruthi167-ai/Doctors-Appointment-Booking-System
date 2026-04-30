@@ -1,0 +1,67 @@
+{% extends 'patient_dashboard_navbar.html' %}
+{% load static %}
+
+{% block title %}
+Appointment Booking
+{% endblock %}
+    
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/patient_booking.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-0">
+                <div class="card-body">
+                    <h2 class="text-center mb-4 font-weight-bold">Book an Appointment</h2>
+                    <p class="text-center text-muted mb-4">Select your preferred doctor and time slot.</p>
+                    
+                    <form method="POST">
+                        {% csrf_token %}
+                        
+                        <div class="form-group mb-3">
+                            <label class="font-weight-bold">Choose Doctor</label>
+                            {{ form.doctor }}
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="font-weight-bold">Date</label>
+                                {{ form.date }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="font-weight-bold">Time</label>
+                                {{ form.time }}
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label class="font-weight-bold">Reason for Visit</label>
+                            {{ form.reason }}
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-lg shadow-sm">
+                            Confirm Booking
+                        </button>
+                    </form>
+                    
+                    <div class="text-center mt-3">
+                        {% if request.GET.doctor_id %}
+                    <a href="/patientviewdoctor/" class="btn btn-outline-secondary ml-2">
+                        Change Doctor
+                    </a>
+                {% else %}
+                    <a href="/patientdashboard/" class="btn btn-outline-danger ml-2">
+                        Go back to Dashboard
+                    </a>
+                {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
